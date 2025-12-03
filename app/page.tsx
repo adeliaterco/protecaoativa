@@ -54,7 +54,7 @@ export default function HomePage() {
     const timer = setTimeout(() => {
       enviarEvento("page_view", {
         device: window.innerWidth < 768 ? "mobile" : "desktop",
-        headline_version: "psychological_discovery_2am"
+        headline_version: "dark_internet_simulation" // ADAPTADO PARA A NOVA OFERTA
       })
     }, 1000)
 
@@ -69,7 +69,7 @@ export default function HomePage() {
     setLoadingProgress(20)
 
     enviarEvento("quiz_start", {
-      headline_version: "psychological_discovery_2am"
+      headline_version: "dark_internet_simulation" // ADAPTADO PARA A NOVA OFERTA
     })
 
     let progress = 20
@@ -293,6 +293,94 @@ export default function HomePage() {
             border-radius: 3px;
           }
 
+          /* NOVOS ESTILOS PARA A OFERTA "O LADO ESCURO DA INTERNET" */
+          .simulation-badge {
+            background: linear-gradient(135deg, #dc2626 0%, #f87171 100%);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: -10px; /* Ajuste para posicionar mais perto do título */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);
+          }
+
+          .what-happens-section {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: left;
+          }
+          .what-happens-title {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+          }
+          .what-happens-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #e5e5e5;
+            font-size: 15px;
+            line-height: 1.6;
+          }
+          .what-happens-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+          }
+          .what-happens-list li::before {
+            content: '→'; /* Usando a seta como conteúdo */
+            color: #dc2626;
+            margin-right: 8px;
+            font-weight: bold;
+            font-size: 1.2em;
+            line-height: 1;
+          }
+
+          .warning-section {
+            background: rgba(255, 193, 7, 0.1); /* Amber background */
+            border: 1px solid rgba(255, 193, 7, 0.4); /* Amber border */
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            text-align: left;
+          }
+          .warning-title {
+            color: #ffc107; /* Amber color */
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+          }
+          .warning-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #fff;
+            font-size: 15px;
+            line-height: 1.6;
+          }
+          .warning-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+          }
+          .warning-list li::before {
+            content: ''; /* Remove default bullet */
+            margin-right: 0;
+          }
+
+
           @media (max-width: 768px) {
             .container-quiz {
               padding: 30px 20px;
@@ -326,6 +414,13 @@ export default function HomePage() {
               margin-top: 30px;
               padding: 15px;
             }
+
+            .what-happens-title, .warning-title {
+              font-size: 16px;
+            }
+            .what-happens-list, .warning-list {
+              font-size: 13px;
+            }
           }
 
           @media (max-width: 480px) {
@@ -358,7 +453,7 @@ export default function HomePage() {
           <div className="loading-overlay">
             <div className="loading-content">
               <div style={{ fontSize: "18px", fontWeight: "600" }}>
-                Preparando tu análisis personalizado...
+                Preparando sua imersão... {/* ADAPTADO PARA A NOVA OFERTA */}
                 <div style={{fontSize: "14px", marginTop: "8px", color: "#dc2626"}}>
                   ⚠️ Spot #{Math.floor(Math.random() * 23 + 77)} de 100 reservado
                 </div>
@@ -430,8 +525,8 @@ export default function HomePage() {
             {/* LOGO CENTRALIZADA */}
             <div className="logo-container">
               <Image
-                src="https://comprarplanseguro.shop/wp-content/uploads/2025/10/c2b0ddda-8a7c-4554-a6c9-d57887b06149.webp"
-                alt="Logo Plan A"
+                src="https://comprarplanseguro.shop/wp-content/uploads/2025/10/c2b0ddda-8a7c-4554-a6c9-d57887b06149.webp" // Mantida como placeholder
+                alt="Logo O Lado Escuro da Internet" // ADAPTADO
                 width={120}
                 height={75}
                 className="logo-pequena"
@@ -443,31 +538,57 @@ export default function HomePage() {
               />
             </div>
 
-            {/* 1. NOVA HEADLINE IMPACTANTE */}
+            {/* HEADLINE ADAPTADA */}
             <h1 className="titulo-quiz">
               <span className="emoji-alerta">🚨</span>
-              ELLA SIGUE PENSANDO EN TI
+              VOCÊ NÃO SABE O QUE SEU FILHO VÊ
               <br />
               <span style={{fontSize: '20px', opacity: 0.9, color: '#dc2626'}}>
-                (El Test Que Lo Revela)
+                (A Simulação que Pais Precisam Ver)
               </span>
             </h1>
 
-            {/* 2. NOVO SUBTÍTULO COM GANCHO PSICOLÓGICO */}
+            {/* BADGE "SIMULAÇÃO REALISTA" */}
+            <div className="simulation-badge">SIMULAÇÃO REALISTA</div>
+
+            {/* SUBTÍTULO ADAPTADO */}
             <p className="subtitulo-quiz">
-              Responde <span className="destaque-palavra">7 PREGUNTAS ESPECÍFICAS</span> y descubre si aún sientes algo por ti basándome en señales psicológicas que el 87% ignora...
-              <br />
-              <span className="prova-social">3,847 hombres ya conocen la verdad sobre su ex.</span>
+              Descubra em uma simulação realista, inspirada em casos reais, o que seus filhos enfrentam online.
             </p>
 
-            {/* 5. INFORMAÇÕES DO QUIZ MELHORADAS */}
-            <div className="quiz-info">
-              <div>⏱️ 2 min</div>
-              <div>🎯 Resultado inmediato</div>
-              <div>🔥 Análisis personalizado</div>
+            {/* SEÇÃO "O QUE VAI ACONTECER?" */}
+            <div className="what-happens-section">
+              <h3 className="what-happens-title">O que vai acontecer?</h3>
+              <ul className="what-happens-list">
+                <li>→ Assédios disfarçados de amizade</li>
+                <li>→ Ameaças e manipulações psicológicas</li>
+                <li>→ Conteúdos impróprios compartilhados em grupos</li>
+                <li>→ Linguagens codificadas usadas para enganar menores</li>
+              </ul>
             </div>
 
-            {/* 4. NOVO: Escassez Real */}
+            {/* PROVA SOCIAL ADAPTADA */}
+            <p className="prova-social">
+              2.847 pais já viram a simulação completa. {/* ADAPTADO */}
+            </p>
+
+            {/* INFORMAÇÕES DO QUIZ ADAPTADAS */}
+            <div className="quiz-info">
+              <div>⏱️ 5 min de imersão</div> {/* ADAPTADO */}
+              <div>🎯 Consciência imediata</div> {/* ADAPTADO */}
+              <div>🔥 Impacto garantido</div> {/* ADAPTADO */}
+            </div>
+
+            {/* SEÇÃO "AVISOS E CONDIÇÕES" */}
+            <div className="warning-section">
+              <h3 className="warning-title">AVISOS E CONDIÇÕES:</h3>
+              <ul className="warning-list">
+                <li>⚠️ Esta simulação não contém imagens explícitas, mas apresenta contextos reais que podem ser perturbadores.</li>
+                <li>⚠️ Esta simulação pode ser perturbadora. Use em ambiente adequado.</li>
+              </ul>
+            </div>
+
+            {/* Escassez Real ADAPTADA */}
             <div style={{
               background: 'rgba(220, 38, 38, 0.1)',
               border: '1px solid rgba(220, 38, 38, 0.4)',
@@ -477,17 +598,17 @@ export default function HomePage() {
               textAlign: 'center'
             }}>
               <div style={{color: '#dc2626', fontSize: '13px', fontWeight: '600'}}>
-                ⚠️ ACCESO LIMITADO HOY
+                ⚠️ ACESSO LIMITADO HOJE {/* ADAPTADO */}
               </div>
               <div style={{color: '#fff', fontSize: '12px', marginTop: '4px'}}>
-                Solo 100 personas por día pueden acceder al test completo
+                Apenas 100 pais por dia podem acessar a simulação completa {/* ADAPTADO */}
               </div>
               <div style={{color: '#dc2626', fontSize: '12px', fontWeight: '600', marginTop: '2px'}}>
-                Spots restantes: 23
+                Spots restantes: 18 {/* ADAPTADO */}
               </div>
             </div>
 
-            {/* 3. CTA OTIMIZADO */}
+            {/* CTA OTIMIZADO ADAPTADO */}
             <button 
               onClick={handleStart} 
               disabled={isLoading || !isOnline} 
@@ -497,28 +618,11 @@ export default function HomePage() {
                 "PREPARANDO..."
               ) : (
                 <>
-                  HACER LA PRUEBA AHORA
+                  INICIAR IMERSÃO {/* ADAPTADO */}
                   <ArrowRight size={18} />
                 </>
               )}
             </button>
-
-            {/* 6. NOVO: Prova Social Específica */}
-            <div style={{
-              background: 'rgba(0, 0, 0, 0.3)',
-              borderRadius: '10px',
-              padding: '12px',
-              margin: '20px 0 15px 0',
-              border: '1px solid rgba(34, 197, 94, 0.3)'
-            }}>
-              <div style={{color: '#22c55e', fontSize: '12px', fontWeight: '600', textAlign: 'center', marginBottom: '6px'}}>
-                RESULTADO RECIENTE:
-              </div>
-              <div style={{color: '#fff', fontSize: '11px', textAlign: 'center', fontStyle: 'italic'}}>
-                "Hice el test y descubrí que ella SÍ pensaba en mí. 
-                En 12 días volvimos." - Carlos A.
-              </div>
-            </div>
 
             {/* GARANTIA MÍNIMA */}
             <div className="garantia-simples">
