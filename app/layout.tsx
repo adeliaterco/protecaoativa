@@ -6,8 +6,8 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Plan A",
-  description: "El sistema completo para recuperar a tu amor perdido en 21 días o menos",
+  title: "E SE",
+  description: "SISTEMA ELETRÔNICO DE PROTEÇÃO",
   generator: 'v0.dev'
 }
 
@@ -37,7 +37,7 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.pixelId = "692a51417601ebc1d4536861";
+              window.pixelId = "6930e6ad221c8aa89e7ad1dc";
               var a = document.createElement("script");
               a.setAttribute("async", "");
               a.setAttribute("defer", "");
